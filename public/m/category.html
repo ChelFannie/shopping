@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link type="image/x-icon" rel="shortcut icon" href="images/favicon.ico">
+  <link rel="stylesheet" href="assets/mui/css/mui.css"/>
+  <link rel="stylesheet" href="assets/fa/css/font-awesome.min.css"/>
+  <link rel="stylesheet" href="css/common.css"/>
+  <link rel="stylesheet" href="./css/category.css">
+</head>
+<body>
+<div class="lt_container">
+    <!-- 头部 -->
+    <div class="lt-header">
+        <a href="javascript:history.back();" class="left">
+            <span class="lt-top-lbtn icon_back fa fa-arrow-left"></span>
+        </a>
+        <div class="search">
+            <input type="text">
+        </div>
+        <a href="./search.html" class="right">
+            <span class="lt-top-rbtn fa fa-search"></span>
+        </a>
+    </div>
+    <!-- 内容部分 -->
+    <div class="lt_content">
+        <div class="lt_wrapper">
+            <div class="lt_cat_left">
+                <div class="mui-scroll-wrapper">
+                    <div class="mui-scroll">
+                        <!--这里放置真实显示的DOM内容-->
+                        <ul>
+                            <li class="active">
+                                <a href="javascript:;" class="fc">运动馆</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="lt_cat_right">
+                <div class="mui-scroll-wrapper">
+                    <div class="mui-scroll">
+                        <!--这里放置真实显示的DOM内容-->
+                        <a href="javascript:;">
+                            <img src="images/brand1.png" alt="">
+                        </a>
+                        <!-- <a href="javascript:;"><img src="images/brand2.png" alt=""></a>
+                        <a href="javascript:;"><img src="images/brand3.png" alt=""></a> -->
+                        <!-- <a href="javascript:;"><img src="images/brand4.png" alt=""></a> -->
+                        <!-- <a href="javascript:;"><img src="images/brand5.png" alt=""></a> -->
+                        <!-- <a href="javascript:;"><img src="images/brand6.png" alt=""></a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 底部 -->
+    <div class="lt_foot">
+        <ul>
+            <li>
+                <a href="./index.html" class="active">
+                    <span class="fa fa-home"></span>
+                    <p>首页</p>
+                </a>
+            </li>
+            <li>
+                <a href="./category.html">
+                    <span class="fa fa-bars"></span>
+                    <p>分类</p>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <span class="fa fa-shopping-cart"></span>
+                    <p>购物车</p>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <span class="fa fa-user"></span>
+                    <p>会员中心</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- 添加隐藏域 -->
+<div class="hidden"></div>
+</body>
+</html>
+<script  type="text/template" id="firstCat">
+    <% for(var i = 0; i < rows.length;i++){%>
+        <li class="<%= i == 0 ? 'active' : ''%>">
+            <a href="javascript:;" class="fc" data-id="<%= rows[i].id%>">
+                <%= rows[i].categoryName%>
+            </a>
+        </li>
+    <%}%>    
+</script>
+
+<script type="text/template" id="secondCat">
+    <% if(total == 0){%>
+        <p>没有数据</p>
+    <% }else{%>    
+        <% for(var i = 0; i < rows.length; i++){%>
+            <a href="javascript:;" data-id="<%= rows[i].categoryId%>">
+                <img src="<%= rows[i].brandLogo%>" alt="">
+                <p><%= rows[i].brandName%></p>
+            </a>
+        <%}%>
+    <%}%>       
+</script>
+<script src="./assets/mui/js/mui.js"></script>
+<script src="./assets/zepto/zepto.min.js"></script>
+<script src="./assets/artTemplate/template-native.js"></script>
+<script src="./js/index.js"></script>
+<script src="./js/category.js"></script>

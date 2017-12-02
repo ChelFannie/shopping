@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link type="image/x-icon" rel="shortcut icon" href="images/favicon.ico">
+  <link rel="stylesheet" href="assets/mui/css/mui.css"/>
+  <link rel="stylesheet" href="assets/fa/css/font-awesome.min.css"/>
+  <link rel="stylesheet" href="css/common.css"/>
+  <link rel="stylesheet" href="./css/category.css">
+  <link rel="stylesheet" href="./css/seach.css">
+</head>
+<body>
+  <div class="lt_container">
+    <!-- 头部 -->
+    <div class="lt-header">
+      <a href="javascript:history.back();" class="left">
+        <span class="lt-top-lbtn icon_back fa fa-arrow-left"></span>
+      </a>
+      <div class="search">搜索中心</div>
+    </div>
+    <div class="lt_content">
+      <div class="lt_wrapper">
+        <!-- 用户输入搜索块 -->
+        <div class="lt_search">
+          <input type="text" placeholder="请输入商品名称" id="userInput">
+          <a href="javascript:;" class="lt_right_btn">
+              <button class="mui-btn-blue">搜索</button>
+          </a>
+        </div>
+        <!-- 搜索历史显示 -->
+        <div class="lt_seach_history">
+        </div>
+      </div>
+    </div>
+    <!-- 底部 -->
+    <div class="lt_foot">
+      <ul>
+        <li>
+          <a href="./index.html" class="active">
+            <span class="fa fa-home"></span>
+            <p>首页</p>
+          </a>
+        </li>
+        <li>
+          <a href="./category.html">
+            <span class="fa fa-bars"></span>
+            <p>分类</p>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:;">
+            <span class="fa fa-shopping-cart"></span>
+            <p>购物车</p>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:;">
+            <span class="fa fa-user"></span>
+            <p>会员中心</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- 添加隐藏域 -->
+  <div class="hidden"></div>
+</body>
+</html>
+<script type="text/template" id="lthsitory">
+  <%if(items.length > 0){%>
+    <div class="lt_search_title">
+      <span>搜索历史</span>
+      <span class="mui-icon mui-icon-trash">清空历史</span>
+  </div>
+  <%} else{%>
+    <div class="lt_search_title">没有历史搜索记录</div>
+  <%}%> 
+  <%if(items.length > 0){%>
+  <div class="lt_searchList">
+    <ul>
+      <%for( var i=items.length-1 ;i>=0  ;i--){%>
+        <li>
+            <a href="./searchList.html?key=<%=items[i]%>"><%=items[i]%></a>
+            <span class="fa fa-close" data-index="<%=i%>"></span>
+        </li>
+      <%}%>  
+    </ul>
+  </div>
+  <%}%>
+</script>
+<script src="./assets/mui/js/mui.js"></script>
+<script src="./assets/zepto/zepto.min.js"></script>
+<script src="./assets/artTemplate/template-native.js"></script>
+<script src="./js/index.js"></script>
+<script src="./js/search.js"></script>

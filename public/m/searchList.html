@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link type="image/x-icon" rel="shortcut icon" href="images/favicon.ico">
+  <link rel="stylesheet" href="assets/mui/css/mui.css"/>
+  <link rel="stylesheet" href="assets/fa/css/font-awesome.min.css"/>
+  <link rel="stylesheet" href="css/common.css"/>
+  <link rel="stylesheet" href="./css/category.css">
+  <link rel="stylesheet" href="./css/seach.css">
+  <link rel="stylesheet" href="./css/searchList.css">
+</head>
+<body>
+  <div class="lt_container">
+    <!-- 头部 -->
+    <div class="lt-header">
+      <a href="javascript:history.back();" class="left">
+        <span class="lt-top-lbtn icon_back fa fa-arrow-left"></span>
+      </a>
+      <div class="search">
+        搜索中心
+      </div>
+    </div>
+    <div class="lt_content">
+      <div class="lt_wrapper">
+        <div class="mui-scroll-wrapper">
+          <div class="mui-scroll">
+            <!-- 用户输入搜索块 -->
+            <div class="lt_search">
+              <input type="text" placeholder="请输入商品名称">
+              <a href="./searchList.html">
+                <button class="mui-btn-blue">搜索</button>
+              </a>
+            </div>
+            <!-- 排序块 -->
+            <div class="lt-order">
+              <a href="javascript:;" class="active" data-type="time">
+                <span>上架时间</span>
+                <span class="fa fa-angle-down"></span>
+              </a>
+              <a href="javascript:;" data-type="price">
+                <span>价格</span>
+                <span class="fa fa-angle-down"></span>
+              </a>
+              <a href="javascript:;" data-type="num">
+                <span>销量</span>
+                <span class="fa fa-angle-down"></span>
+              </a>
+              <a href="javascript:;" data-type="discount">
+                <span>折扣</span>
+                <span class="fa fa-angle-down"></span>
+              </a>
+            </div>
+            <!-- 产品搜索结果展示区 -->
+            <div class="lt_sports">
+              
+              <!-- <a href="javascript:;">
+                <img src="images/product.jpg" alt="">
+                <p>adidas阿迪达斯 男式 场下休闲篮球鞋S83700 </p>
+                <p>
+                  <span>￥566.00</span>
+                  <del>￥888.00</del>
+                </p>
+                <button class="mui-btn-blue">立即购买</button>
+              </a>
+              <a href="javascript:;">
+                <img src="images/product.jpg" alt="">
+                <p>adidas阿迪达斯 男式 场下休闲篮球鞋S83700 </p>
+                <p>
+                  <span>￥566.00</span>
+                  <del>￥888.00</del>
+                </p>
+                <button class="mui-btn-blue">立即购买</button>
+              </a>
+              <a href="javascript:;">
+                <img src="images/product.jpg" alt="">
+                <p>adidas阿迪达斯 男式 场下休闲篮球鞋S83700 </p>
+                <p>
+                  <span>￥566.00</span>
+                  <del>￥888.00</del>
+                </p>
+                <button class="mui-btn-blue">立即购买</button>
+              </a> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 底部 -->
+    <div class="lt_foot">
+      <ul>
+        <li>
+          <a href="./index.html" class="active">
+            <span class="fa fa-home"></span>
+            <p>首页</p>
+          </a>
+        </li>
+        <li>
+          <a href="./category.html">
+            <span class="fa fa-bars"></span>
+            <p>分类</p>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:;">
+            <span class="fa fa-shopping-cart"></span>
+            <p>购物车</p>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:;">
+            <span class="fa fa-user"></span>
+            <p>会员中心</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- 添加隐藏域 -->
+  <div class="hidden"></div>
+</body>
+</html>
+<script type="text/template" id="productList">
+  <% if(data.length == 0){%>
+    <p>没有找到对应的数据。。。。</p>
+  <%} else{%>
+    <% for(var i = 0; i < data.length; i++){%>
+      <a href="product-detail.html?id=<%=data[i].id%>" data-id="<%= data[i].id%>">
+        <img src="<%=data[i].pic[0].picAddr%>" alt="" onerror="this.src='/m/images/none.jpg'">
+        <p><%=data[i].proName%></p>
+        <p>
+          <span><%=data[i].price%></span>
+          <del><%=data[i].oldPrice%></del>
+        </p>
+        <button class="mui-btn-blue">立即购买</button>
+      </a>
+    <%}%>  
+  <%}%>    
+</script>
+<script src="./assets/mui/js/mui.js"></script>
+<script src="./assets/zepto/zepto.min.js"></script>
+<script src="./assets/artTemplate/template-native.js"></script>
+<script src="./js/index.js"></script>
+<script src="./js/common.js"></script>
+<script src="./js/searchList.js"></script>

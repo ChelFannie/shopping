@@ -1,0 +1,9 @@
+/* 导航 */
+.lt_nav{
+  padding: 0 1%;
+  margin-top: 10px;
+}
+.lt_nav a{
+  float: left;
+  width: 33.3333%;
+}

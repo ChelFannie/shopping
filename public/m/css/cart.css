@@ -1,0 +1,47 @@
+.mui-media-body .name{
+  height: 40px;
+  line-height: 20px;
+  white-space: normal;
+}
+.mui-media-body .info{
+  height: 25px;
+  line-height: 25px;
+  font-size: 13px;
+}
+.mui-media-body .info .price{
+  font-size: 16px;
+  color: red;
+}
+.mui-media-body .info .number{
+  float: right;
+}
+input[type='checkbox'], input[type='radio'] {
+  box-sizing: border-box;
+  padding: 0;
+  position: absolute;
+  left: 15px;
+  bottom: 18px;
+}
+
+.cart_order{
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 50px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 14px;
+  color: #ff3300;
+  z-index: 999;
+  background: #ccc;
+}
+
+.cart_order a{
+  width: 100px;
+  height: 50px;
+  text-align: center;
+  background: #ff3300;
+  display: block;
+  float: right;
+  color: #fff;
+}

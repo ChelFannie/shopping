@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0"/>
+    <title>乐淘首页</title>
+    <link type="image/x-icon" rel="shortcut icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="assets/mui/css/mui.css"/>
+    <link rel="stylesheet" href="assets/fa/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="css/common.css"/>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/category.css">
+</head>
+<body>
+    <div class="lt_container">
+      <div class="lt-header">
+        <a href="javascript:history.back();" class="left">
+          <span class="lt-top-lbtn icon_back fa fa-arrow-left"></span>
+        </a>
+        <div class="search">
+          登录
+        </div>
+      </div>
+    <div class="lt_content">
+      <div class="lt_wrapper">
+        <form class="mui-input-group">
+          <div class="mui-input-row">
+            <label>用户名</label>
+            <input type="text" class="mui-input-clear" placeholder="请输入用户名">
+          </div>
+          <div class="mui-input-row">
+            <label>密码</label>
+            <input type="password" class="mui-input-password" placeholder="请输入密码">
+          </div>
+          <div class="mui-button-row">
+            <button type="button" class="mui-btn mui-btn-primary">登录</button>
+            <button type="reset" class="mui-btn mui-btn-danger" >取消</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="lt_foot">
+            <ul>
+                <li>
+                    <a href="javascript:;" class="active">
+                        <span class="fa fa-home"></span>
+                        <p>首页</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="./category.html">
+                        <span class="fa fa-bars"></span>
+                        <p>分类</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <span class="fa fa-shopping-cart"></span>
+                        <p>购物车</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <span class="fa fa-user"></span>
+                        <p>会员中心</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- 添加隐藏域 -->
+    <div class="hidden"></div>
+</body>
+</html>
+<script src="./assets/mui/js/mui.js"></script>
+<script src="./assets/zepto/zepto.min.js"></script>
+<script src="./js/login.js"></script>

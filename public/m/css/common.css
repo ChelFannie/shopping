@@ -1,0 +1,170 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+li{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  -webkit-tap-highlight-color: transparent;
+}
+input{
+  border-style: none;
+  outline-style: none;
+}
+img{
+  display: block;
+  width: 100%;
+}
+body,html{
+  width: 100%;
+  height: 100%;
+}
+body{
+  background: #fff;
+}
+/*头部开始*/
+.lt_container{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.lt_header{
+  width: 100%;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  background: #006699;
+  /* position: absolute; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  color: #fff;
+  font-size: 18px;
+  z-index: 99;
+}
+.lt_header a{
+  position: absolute;
+  top: 0px;
+  right: 15px;
+}
+/*内容部分*/
+.lt_content{
+  width: 100%;
+  height: 100%;
+  padding-top:45px;
+  padding-bottom:55px;
+}
+
+
+
+
+/* 促销活动banner模块 */
+.lt_cx_active{
+  margin-top: 10px;
+  padding: 0 1%;
+}
+.lt_cx_active a{
+  float: left;
+}
+.lt_cx_active a:nth-of-type(1){
+  width: 65%;
+}
+.lt_cx_active a:nth-of-type(2){
+  width: 33%;
+}
+.lt_cx_active a:nth-of-type(1)>img{
+  width: 50%;
+  float: left;
+}
+.lt_cx_active a:nth-of-type(2)>img{
+  width: 100%;
+  float: right;
+}
+
+/* 广告 */
+.lt_adv{
+  padding: 0 1%;
+}
+/* 品牌专区 */
+.lt_brand{
+  padding: 0 1%;
+}
+.lt_brand a{
+  float: left;
+  width: 25%;
+}
+/* 运动生活专区 */
+.lt_sports{
+  padding-top: 1%;
+  padding-right: 2%;
+}
+.lt_sports a{
+  float: left;
+  width: 48.5%;
+  margin-left: 1%;
+  margin-bottom: 1%;
+  text-align: center;
+  box-shadow: 0 0 5px #333;
+}
+.lt_sports a>p:nth-of-type(1){
+  font-size: 14px;
+  margin-top: 10px;
+}
+.lt_sports a>p:nth-of-type(2){
+  font-size: 14px;
+}
+.lt_sports a>p:nth-of-type(2) >del{
+  color: red;
+  margin-left: 5px;
+}
+.lt_sports a>button{
+  margin-bottom: 10px;
+}
+
+
+/*底部开始*/
+.lt_foot{
+  width: 100%;
+  height: 55px;
+  background: #006699;
+  /* position: absolute; */
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 99;
+}
+.lt_foot ul{
+  width: 100%;
+  height: 100%;
+}
+.lt_foot li{
+  float: left;
+  width: 25%;
+  height: 100%;
+  text-align: center;
+}
+.lt_foot li a{
+  color: #fff;
+  font-size: 16px;
+  margin-top: 10px;
+}
+.lt_foot li a.active{
+  color: orange;
+}
+.lt_foot li a p{
+  color: #fff;
+  font-size: 14px;
+}
+.lt_foot li a.active p{
+  color: orange;
+}
+.hidden{
+  width: 100%;
+  height: 55px;
+  visibility: hidden;
+}

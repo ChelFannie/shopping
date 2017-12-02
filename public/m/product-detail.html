@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link type="image/x-icon" rel="shortcut icon" href="images/favicon.ico">
+  <link rel="stylesheet" href="assets/mui/css/mui.css"/>
+  <link rel="stylesheet" href="assets/fa/css/font-awesome.min.css"/>
+  <link rel="stylesheet" href="css/common.css"/>
+  <link rel="stylesheet" href="./css/category.css">
+  <link rel="stylesheet" href="./css/seach.css">
+  <link rel="stylesheet" href="./css/product-detail.css">
+</head>
+<body>
+  <div class="lt_container">
+    <!-- 头部 -->
+    <div class="lt-header">
+      <a href="javascript:history.back();" class="left">
+        <span class="lt-top-lbtn icon_back fa fa-arrow-left"></span>
+      </a>
+      <div class="search">
+        搜索中心
+      </div>
+    </div>
+    <div class="lt_content">
+      <div class="lt_wrapper">
+        <div class="mui-scroll-wrapper">
+          <div class="mui-scroll">
+            <!-- 轮播图 -->
+            <div class="lt_carousel">
+              <div class="mui-slider">
+                <div class="mui-slider-group mui-slider-loop">
+                  <!--支持循环，需要重复图片节点-->
+                  <div class="mui-slider-item mui-slider-item-duplicate">
+                    <a href="#">
+                      <img src="./images/banner6.png" />
+                    </a>
+                  </div>
+                  <div class="mui-slider-item">
+                    <a href="#">
+                      <img src="./images/banner2.png" />
+                    </a>
+                  </div>
+                  <!--支持循环，需要重复图片节点-->
+                  <div class="mui-slider-item mui-slider-item-duplicate">
+                    <a href="#">
+                      <img src="./images/banner1.png" />
+                    </a>
+                  </div>
+                </div>
+                <div class="mui-slider-indicator">
+                  <div class="mui-indicator mui-active"></div>
+                  <div class="mui-indicator"></div>
+                </div>
+              </div> 
+            </div>
+            <div class="lt-item">
+                <span>匡威三星标1970s converse复刻 142334c 144757c三星标黑色高帮</span>
+            </div>
+            <!-- 价格 -->
+            <div class="lt-item">
+                价格：<strong class="price">¥4</strong>
+                <del class="oldPrice">¥8</del>
+            </div>
+            <!-- 尺码： -->
+            <div class="lt-item">
+                尺码：
+                <span class="psize">40</span>
+            </div>
+            <!-- 数量 -->
+            <div class="lt-item">
+              数量：
+              <div class="mui-numbox" data-numbox-min="1" data-numbox-max="20">
+                <button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+                <input class="mui-input-numbox" type="number" value="1">
+                <button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+              </div> 剩余20件
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="lt_foot">
+      <div class="lt-trade">
+        <a href="cart.html">
+          <span class="fa fa-shopping-cart"></span>
+        </a>
+        <a href="javascript:;" class="mui-btn mui-badge-danger">立即购买</a>
+        <a href="javascript:;" class="mui-btn mui-btn-warning">加入购物车</a>
+      </div>
+    </div>
+    
+  </div>
+  <!-- 添加隐藏域 -->
+  <div class="hidden"></div>
+</body>
+</html>
+<script type="text/template" id="productDetail">
+    <!-- 轮播图 -->
+    <div class="lt_carousel">
+        <div class="mui-slider">
+          <div class="mui-slider-group mui-slider-loop">
+            <!--担心pic中没有数据，所以我们判断pic中是否有图片，如果没有图片就默认添加一张图片-->
+            <%
+            if(!pic || !(pic.length >0)){
+                pic =['/m/images/none.jpg'];
+            }
+           %>
+            <!--支持循环，需要重复图片节点-->
+            <div class="mui-slider-item mui-slider-item-duplicate">
+              <a href="#">
+                <img src="<%=pic[pic.length-1].picAddr%>" />
+              </a>
+            </div>
+            <% for(var i=0;i< pic.length;i++){%>
+            <div class="mui-slider-item">
+              <a href="#">
+                <img src="<%=pic[i].picAddr%>" />
+              </a>
+            </div>
+            <%}%>
+            <!--支持循环，需要重复图片节点-->
+            <div class="mui-slider-item mui-slider-item-duplicate">
+              <a href="#">
+                <img src="<%=pic[0].picAddr%>" />
+              </a>
+            </div>
+          </div>
+          <div class="mui-slider-indicator">
+            <% for(var i=0; i< pic.length;i++){%>
+            <div class="mui-indicator <%= i==0?'mui-active':''%>"></div>
+            <%}%>
+          </div>
+        </div> 
+      </div>
+      <div class="lt-item">
+          <span><%=proName%></span>
+      </div>
+      <!-- 价格 -->
+      <div class="lt-item">
+          价格：<strong class="price">¥<%=price%></strong>
+          <del class="oldPrice"><%=oldPrice%></del>
+      </div>
+      <!-- 尺码： -->
+      <div class="lt-item">
+          尺码：
+          <%
+          var str = size;
+          var arr = str.split("-");
+          var start = arr[0];
+          var end = arr[1];
+          %>
+      <% for(var i=start; i<= end;i++){%>
+          <span class="psize <%= i==start?'active':''%>" ><%=i%></span>
+      <%}%>    
+      </div>
+
+      <!-- 数量 -->
+      <div class="lt-item">
+        数量：
+        <div class="mui-numbox" data-numbox-min="1" data-numbox-max="<%=num%>">
+          <button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+          <input class="mui-input-numbox" type="number" value="1">
+          <button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+        </div> 剩余<%=num%>件
+      </div>
+</script>
+<script src="./assets/mui/js/mui.js"></script>
+<script src="./assets/zepto/zepto.min.js"></script>
+<script src="./assets/artTemplate/template-native.js"></script>
+<script src="./js/index.js"></script>
+<script src="./js/common.js"></script>
+<script src="./js/product-detail.js"></script>

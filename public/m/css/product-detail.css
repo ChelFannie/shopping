@@ -1,0 +1,55 @@
+.lt_foot{
+  background: #fff;
+}
+.lt-trade{
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  background-color: #eee;
+  border-top: 1px solid #ccc;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.lt-trade a{
+  display: inline-block;
+}
+.lt-trade .fa-shopping-cart{
+  font-size: 20px;
+  margin-left:10px;
+}
+.lt-trade .mui-btn-warning{
+  float: right;
+}
+.lt-trade .mui-badge-danger{
+  float: right;
+  margin-right:10px;
+}
+
+.lt-item{
+  width: 100%;
+  padding:10px;
+  border-bottom: 1px solid #ccc;
+}
+.lt-item .price{
+  font-size: 20px;
+  color: red;
+  font-weight: bold;
+}
+.lt-item .oldPrice{
+  font-size: 14px;
+  color: #888;
+}
+.lt-item .psize{
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  border: 1px solid #ccc;
+  display: inline-block;
+  margin-left:5px;
+  margin-top:5px;
+}
+.lt-item .psize.active{
+  background-color: yellow;
+}
